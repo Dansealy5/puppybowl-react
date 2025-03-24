@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { fetchAllPlayers } from "../api"
+import { useNavigate } from "react-router-dom"
 
 const AllPlayers = () => {
     const [players, setPlayers] = useState([])
@@ -26,11 +27,16 @@ useEffect(() => {
 const playersToDisplay = 
 searchParam ? players.filter((player) => player.name.toLowerCase().includes(searchParam.toLowerCase())) : players;
 
+const navigate = useNavigate()
+const handleClick = () => {
+    navigate(`/players/${id}`)
+}
+
 return (
     <>
         <div>
             <label>
-                Search:{""}
+                Search:{" "}
                 <input type="text"
                 placeholder="search"
                 onChange={(e) => setSearchParam(e.target.value.toLowerCase())} /> 
@@ -38,7 +44,9 @@ return (
         </div>
 
         {playersToDisplay.map((player) => {
-            return <h3 key={player.id}>{player.name}</h3>
+            return <h3 key={player.id}>{player.name}
+            <button onClick={handleClick}>Details</button>
+            </h3>
         })}
     </>
 )

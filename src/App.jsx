@@ -3,6 +3,7 @@ import './App.css'
 import { Routes, Route, Link } from "react-router-dom"
 import { BrowserRouter } from "react-router-dom";
 import AllPlayers from './components/AllPlayers';
+import SinglePlayer from './components/SinglePlayer';
 
 function App() {
 

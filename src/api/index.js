@@ -10,3 +10,13 @@ export async function fetchAllPlayers() {
         console.error(error)
     }
 }
+
+export async function fetchPlayerById(id) {
+    try {
+        const response = await fetch(`${APIURL}/players/${id}`)
+        const result = await response.json()
+        return result
+    } catch (error) {
+        console.error(error)
+    }
+}
