@@ -28,7 +28,7 @@ const playersToDisplay =
 searchParam ? players.filter((player) => player.name.toLowerCase().includes(searchParam.toLowerCase())) : players;
 
 const navigate = useNavigate()
-const handleClick = () => {
+const handleClick = (id) => {
     navigate(`/players/${id}`)
 }
 
@@ -45,7 +45,7 @@ return (
 
         {playersToDisplay.map((player) => {
             return <h3 key={player.id}>{player.name}
-            <button onClick={handleClick}>Details</button>
+            <button onClick={() => handleClick(player.id)}>Details</button>
             </h3>
         })}
     </>
