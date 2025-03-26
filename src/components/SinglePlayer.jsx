@@ -51,11 +51,11 @@ const SinglePlayer = () => {
 
     return ( 
     <div>
-      <h1>{player.name}</h1>
-      <img src={player.imageUrl} alt={player.name} />
-      <p>Breed: {player.breed}</p>
-      <p>Status: {player.status}</p>
-      <p>Team: {player.teamId ? player.teamId : "Not assigned"}</p>
+      <h1>{player?.name}</h1>
+      <img src={player?.imageUrl} alt={player?.name} />
+      <p>Breed: {player?.breed}</p>
+      <p>Status: {player?.status}</p>
+      <p>Team: {player?.teamId ? player?.teamId : "Not assigned"}</p>
     </div>
     );
 }
